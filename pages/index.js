@@ -2,7 +2,7 @@ import { HeroBanner, FooterBanner, Product } from "../components";
 import { client } from "../library/client";
 
 
-const Home = ({products, bannerData}) => {
+const Home = ({productsData, bannerData}) => {
  
   return (
     <>
@@ -14,7 +14,7 @@ const Home = ({products, bannerData}) => {
         </div>
 
         <div className="products-container">
-          {products?.map((product) => <Product key={product._id} product={product} />)}
+          {productsData?.map((product) => <Product key={product._id} product={product} />)}
         </div>
       </div>
       <FooterBanner footerBanner = {bannerData && bannerData[0]}/>
@@ -24,13 +24,13 @@ const Home = ({products, bannerData}) => {
 
 export const getServerSideProps = async () => {
   const productQuery = '*[_type == "product"]';
-  const products = await client.fetch(productQuery);
+  const productsData = await client.fetch(productQuery);
 
   const bannerQuery = '*[_type == "banner"]';
   const bannerData = await client.fetch(bannerQuery);
 
   return {
-    props: {products, bannerData}
+    props: {productsData, bannerData}
   }
 };
 

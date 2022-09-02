@@ -1,8 +1,13 @@
-
+import { FaTelegram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <div className="footer-container">
+      <p>Ka'lo Store</p>
+      <p className="icons">
+        <FaTelegram />
+      </p>
+    </div>
   )
 }
 
