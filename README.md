@@ -1,4 +1,4 @@
-# This is a fullsatck project, which is made on NextJS using Sanity (CMS) 
+# This is a fullsatck project which is made on NextJS using Sanity (CMS) 
 
 ## Getting Started
 To get started developing right away:
